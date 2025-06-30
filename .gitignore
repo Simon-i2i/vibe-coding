@@ -57,13 +57,5 @@ nunit-*.xml
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs/
-/.vscode/
-/Authenication/.vs/
-/Authenication/.vscode/
-/Authenication/Authenication.sln
-/Authenication/Authenication.sln.DotSettings
-/Authenication/Authenication.sln.DotSettings.user
-/Authenication/Authenication.sln.DotSettings.user.vscode
-/Authenication/Authenication.sln.DotSettings.user.vscode.user
-/Authenication/Authenication.sln.DotSettings.user.vscode.user.vscode
+*/.vs/*
+/src/Sorting/.vs/Sorting
