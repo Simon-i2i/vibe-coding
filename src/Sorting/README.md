@@ -82,7 +82,7 @@ Sorting/
 
 1. Clone this repository.
 2. Open the solution in Visual Studio 2022+ or VS Code.
-3. Run any file to see the algorithm in action.
+3. Run the commands 'dotnet build -c Release' and 'dotnet run -c Release' to see the algorithm in action.
 
 ---
 
