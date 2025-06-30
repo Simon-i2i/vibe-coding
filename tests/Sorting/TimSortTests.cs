@@ -1,8 +1,14 @@
-using System;
-using Xunit;
+using Microsoft.Extensions.DependencyInjection;
 
-public class TimSortTests
+public class TimSortTests : IClassFixture<SortingTestFixture>
 {
+    private readonly TimSort _sorter;
+
+    public TimSortTests(SortingTestFixture fixture)
+    {
+        _sorter = fixture.ServiceProvider.GetRequiredService<TimSort>();
+    }
+
     [Theory]
     [InlineData(new int[] { 1, 2, 3, 4, 5 }, new int[] { 1, 2, 3, 4, 5 })] // Already sorted
     [InlineData(new int[] { 5, 4, 3, 2, 1 }, new int[] { 1, 2, 3, 4, 5 })] // Reverse sorted
@@ -19,8 +25,7 @@ public class TimSortTests
     public void TimSort_SortsCorrectly(int[] input, int[] expected)
     {
         int[] arr = (int[])input.Clone();
-        ISort sorter = new TimSort();
-        sorter.Sort(arr);
+        _sorter.Sort(arr);
         Assert.Equal(expected, arr);
     }
 } 

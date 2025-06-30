@@ -1,8 +1,14 @@
-using System;
-using Xunit;
+using Microsoft.Extensions.DependencyInjection;
 
-public class BubbleSortTests
+public class BubbleSortTests : IClassFixture<SortingTestFixture>
 {
+    private readonly BubbleSort _sorter;
+
+    public BubbleSortTests(SortingTestFixture fixture)
+    {
+        _sorter = fixture.ServiceProvider.GetRequiredService<BubbleSort>();
+    }
+
     [Theory]
     [InlineData(new int[] { 1, 2, 3, 4, 5 }, new int[] { 1, 2, 3, 4, 5 })] // Already sorted
     [InlineData(new int[] { 5, 4, 3, 2, 1 }, new int[] { 1, 2, 3, 4, 5 })] // Reverse sorted
@@ -19,8 +25,7 @@ public class BubbleSortTests
     public void BubbleSort_SortsCorrectly(int[] input, int[] expected)
     {
         int[] arr = (int[])input.Clone();
-        ISort sorter = new BubbleSort();
-        sorter.Sort(arr);
+        _sorter.Sort(arr);
         Assert.Equal(expected, arr);
     }
 }

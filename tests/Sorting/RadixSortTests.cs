@@ -1,8 +1,14 @@
-using System;
-using Xunit;
+using Microsoft.Extensions.DependencyInjection;
 
-public class RadixSortTests
+public class RadixSortTests : IClassFixture<SortingTestFixture>
 {
+    private readonly RadixSort _sorter;
+
+    public RadixSortTests(SortingTestFixture fixture)
+    {
+        _sorter = fixture.ServiceProvider.GetRequiredService<RadixSort>();
+    }
+
     [Theory]
     [InlineData(new int[] { 1, 2, 3, 4, 5 }, new int[] { 1, 2, 3, 4, 5 })] // Already sorted
     [InlineData(new int[] { 5, 4, 3, 2, 1 }, new int[] { 1, 2, 3, 4, 5 })] // Reverse sorted
@@ -18,8 +24,7 @@ public class RadixSortTests
     public void RadixSort_SortsCorrectly(int[] input, int[] expected)
     {
         int[] arr = (int[])input.Clone();
-        ISort sorter = new RadixSort();
-        sorter.Sort(arr);
+        _sorter.Sort(arr);
         Assert.Equal(expected, arr);
     }
 } 

@@ -1,8 +1,14 @@
-using System;
-using Xunit;
+using Microsoft.Extensions.DependencyInjection;
 
-public class BucketSortTests
+public class BucketSortTests : IClassFixture<SortingTestFixture>
 {
+    private readonly BucketSort _sorter;
+
+    public BucketSortTests(SortingTestFixture fixture)
+    {
+        _sorter = fixture.ServiceProvider.GetRequiredService<BucketSort>();
+    }
+
     [Theory]
     [InlineData(new int[] { 1, 2, 3, 4, 5 }, new int[] { 1, 2, 3, 4, 5 })] // Already sorted
     [InlineData(new int[] { 5, 4, 3, 2, 1 }, new int[] { 1, 2, 3, 4, 5 })] // Reverse sorted
@@ -18,8 +24,7 @@ public class BucketSortTests
     public void BucketSort_SortsCorrectly(int[] input, int[] expected)
     {
         int[] arr = (int[])input.Clone();
-        ISort sorter = new BucketSort();
-        sorter.Sort(arr);
+        _sorter.Sort(arr);
         Assert.Equal(expected, arr);
     }
 } 

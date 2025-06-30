@@ -1,8 +1,14 @@
-using System;
-using Xunit;
+using Microsoft.Extensions.DependencyInjection;
 
-public class InsertionSortTests
+public class InsertionSortTests : IClassFixture<SortingTestFixture>
 {
+    private readonly InsertionSort _sorter;
+
+    public InsertionSortTests(SortingTestFixture fixture)
+    {
+        _sorter = fixture.ServiceProvider.GetRequiredService<InsertionSort>();
+    }
+
     [Theory]
     [InlineData(new int[] { 1, 2, 3, 4, 5 }, new int[] { 1, 2, 3, 4, 5 })] // Already sorted
     [InlineData(new int[] { 5, 4, 3, 2, 1 }, new int[] { 1, 2, 3, 4, 5 })] // Reverse sorted
@@ -19,8 +25,7 @@ public class InsertionSortTests
     public void InsertionSort_SortsCorrectly(int[] input, int[] expected)
     {
         int[] arr = (int[])input.Clone();
-        ISort sorter = new InsertionSort();
-        sorter.Sort(arr);
+        _sorter.Sort(arr);
         Assert.Equal(expected, arr);
     }
 } 
