@@ -1,17 +1,16 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{827E0CD3-B72D-47B6-A68D-7590B98EB39B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimonSays.Authentication.Domain", "src\AuthenticationServce\SimonSays.Authentication.Domain\SimonSays.Authentication.Domain.csproj", "{DEB5C818-33DA-449D-8AED-BC612DE6A617}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimonSays.Authentication.Domain", "SimonSays.Authentication.Domain/SimonSays.Authentication.Domain.csproj", "{DEB5C818-33DA-449D-8AED-BC612DE6A617}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimonSays.Authentication.Application", "src\AuthenticationServce\SimonSays.Authentication.Application\SimonSays.Authentication.Application.csproj", "{1F607496-591C-4996-8C12-090BA08DC397}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimonSays.Authentication.Application", "SimonSays.Authentication.Application/SimonSays.Authentication.Application.csproj", "{1F607496-591C-4996-8C12-090BA08DC397}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimonSays.Authentication.Infrastructure", "src\AuthenticationServce\SimonSays.Authentication.Infrastructure\SimonSays.Authentication.Infrastructure.csproj", "{65C3B513-8E10-4AB2-83A7-69AB6E8D0D3A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimonSays.Authentication.Infrastructure", "SimonSays.Authentication.Infrastructure/SimonSays.Authentication.Infrastructure.csproj", "{65C3B513-8E10-4AB2-83A7-69AB6E8D0D3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimonSays.Authentication.Api", "src\AuthenticationServce\SimonSays.Authentication.Api\SimonSays.Authentication.Api.csproj", "{57975899-059B-4870-8705-7F954D780754}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimonSays.Authentication.Api", "SimonSays.Authentication.Api/SimonSays.Authentication.Api.csproj", "{57975899-059B-4870-8705-7F954D780754}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

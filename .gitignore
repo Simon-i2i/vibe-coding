@@ -57,5 +57,5 @@ nunit-*.xml
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-*/.vs/*
-/src/Sorting/.vs/Sorting
+# Ignore all .vs folders and their contents
+.vs/
