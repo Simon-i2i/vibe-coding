@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 
-public class BubbleSortTests
+public class InsertionSortTests
 {
     [Theory]
     [InlineData(new int[] { 1, 2, 3, 4, 5 }, new int[] { 1, 2, 3, 4, 5 })] // Already sorted
@@ -16,11 +16,11 @@ public class BubbleSortTests
     [InlineData(new int[] { 1, 0, 1, 0, 1, 0 }, new int[] { 0, 0, 0, 1, 1, 1 })] // Alternating values
     [InlineData(new int[] { 1000000, -1000000, 500, -500 }, new int[] { -1000000, -500, 500, 1000000 })] // Large/small numbers
     [InlineData(new int[] { 2, 3, 2, 1, 3, 1 }, new int[] { 1, 1, 2, 2, 3, 3 })] // Duplicates
-    public void BubbleSort_SortsCorrectly(int[] input, int[] expected)
+    public void InsertionSort_SortsCorrectly(int[] input, int[] expected)
     {
         int[] arr = (int[])input.Clone();
-        ISort sorter = new BubbleSort();
+        ISort sorter = new InsertionSort();
         sorter.Sort(arr);
         Assert.Equal(expected, arr);
     }
-}
+} 
