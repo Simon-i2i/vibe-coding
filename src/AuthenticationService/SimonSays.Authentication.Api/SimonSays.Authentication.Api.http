@@ -1,6 +1,0 @@
-@SimonSays.Authentication.Api_HostAddress = http://localhost:5122
-
-GET {{SimonSays.Authentication.Api_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
